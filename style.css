@@ -135,7 +135,7 @@ model-viewer {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -60%);
   background-color: #fff;
   border: 1px solid #ddd;
   padding: 10px;
@@ -148,12 +148,25 @@ model-viewer {
 }
 
 .allspoilers{
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	align-content: left;
-	text-align: left;
+	display: flex;
 	padding: 5px;
 }
+
+input.larger {
+        /* width: 25px;
+        height: 25px; */
+		-ms-transform: scale(2); /* IE */
+  		-moz-transform: scale(2); /* FF */
+  		-webkit-transform: scale(2); /* Safari and Chrome */
+  		-o-transform: scale(2); /* Opera */
+  		transform: scale(2);
+  		padding: 10px;
+      }
+
+.dropdown{
+	display: grid;
+}
+
 
 .credits{
 	font-size: 80%;
