@@ -12,7 +12,7 @@ function removeDraggable(imgs){
   for (element of imgs) {
   element.draggable = false;}}
 
-if (!localStorage.getItem("spoilerList")) {
+if (localStorage.getItem("spoilerList")===null) {
   populateStorage();
   setSpoilers();
 } else {
@@ -102,8 +102,14 @@ function populateStorage(){
 }
 
 function setSpoilers(){
+  spoilerListString = localStorage.getItem("spoilerList")
   console.log("Reading spoiler info from local storage.")
-  spoilerList = localStorage.getItem("spoilerList").split(',')
+  if (spoilerListString.length > 0){
+    spoilerList = spoilerListString.split(',')
+  }
+  else{
+    spoilerList = []
+  }
 }
 
 function setSettingsfromStorage(){
@@ -113,7 +119,7 @@ function setSettingsfromStorage(){
     }
     else{
       document.getElementById(checkboxlist[checkbox]).checked = false;
-    }
+    } 
   }
   }
 
@@ -125,12 +131,20 @@ function toggleSpoiler(spoilername){
   spoilerList.push(spoilername)
   }
   localStorage.setItem("spoilerList",spoilerList)
+  
+  if (spoilerList.length == 0){
+    document.getElementById("AllSpoilersCheckbox").checked=true
+  }
+  else{
+    document.getElementById("AllSpoilersCheckbox").checked=false
+  }
+
   regenerateModelCards()
 }
 
 function toggleAllSpoilers(){
   if(document.getElementById("AllSpoilersCheckbox").checked==true){
-    spoilerList = ['empty'];
+    spoilerList = [];
     setSettingsfromStorage()
   }
   else{
