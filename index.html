@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Helps scale the page better on smaller screens-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+    <meta name="author" content="Jasmine Otto and Barrett Anderson">
+    <title>Miniature Gallery</title>
+
+    <link rel="icon" href="icons/favicon.ico" sizes="16x16">
+
+    <!-- Fonts -->
+    <link rel='stylesheet' type='text/css' href="https://fonts.googleapis.com/css?family=Wire+One">
+    <link rel='stylesheet' type='text/css' href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro'>
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC'>
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Abel'>
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:100,200,300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=News+Cycle" rel="stylesheet">
+  
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style-homepage.css"> -->
+
+    <!-- Libraries --> 
+    <script type="text/javascript" src="lib/jquery-3.0.0.min.js"></script>
+    <script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
+    <script src="lib/imagesloaded.pkgd.min.js"></script>
+    <script type="text/javascript" src="lib/loki.js"></script>
+
+    <!-- JS -->
+    <script type="text/javascript" src="data.js"></script>
+    <script type="text/javascript" src="DataWrangler.js"></script>
+    <script type="text/javascript" src="homepage.js"></script>
+
+    <!-- <base href="https://www.barrettrees.com/ModelGallery/" /> -->
+  </head>
+
+  <body>
+    <div class="topmatter">
+      
+      <div class="title"><h2>JazzTap's Frosthaven Painted Minis</h2></div>
+      <div class="iconbar">
+        <button onclick="iconbarButton('Blinkblade')"> <img class="icon"  src="icons/BB.png"> </button>
+        <button onclick="iconbarButton('Banner Spear')"> <img class="icon" src="icons/BN.png"> </button>
+        <button onclick="iconbarButton('Boneshaper')"> <img class="icon" src="icons/BO.png"> </button>
+        <button onclick="iconbarButton('Drifter')"> <img class="icon" src="icons/DF.png"> </button>
+        <button onclick="iconbarButton('Deathwalker')"> <img class="icon" src="icons/DW.png"> </button>
+        <button onclick="iconbarButton('Geminate (Melee)')"> <img class="icon" src="icons/GEM.png"> </button>
+        <button onclick="iconbarButton('Geminate (Ranged)')"> <img class="icon" src="icons/GER.png"> </button>
+        <button onclick="iconbarButton('Coral')"> <img class="icon" src="icons/CR.png"> </button>
+        <button onclick="iconbarButton('Kelp')"> <img class="icon" src="icons/DT.png"> </button>
+        <button onclick="iconbarButton('Fist')"> <img class="icon" src="icons/FF.png"> </button>
+        <button onclick="iconbarButton('Prism')"> <img class="icon" src="icons/HV.png"> </button>
+        <button onclick="iconbarButton('Astral')"> <img class="icon" src="icons/IF.png"> </button>
+        <button onclick="iconbarButton('Drill')"> <img class="icon" src="icons/ME.png"> </button>
+        <button onclick="iconbarButton('Shackles')"> <img class="icon" src="icons/PC.png"> </button>
+        <button onclick="iconbarButton('Meteor')"> <img class="icon" src="icons/PY.png"> </button>
+        <button onclick="iconbarButton('Snowflake')"> <img class="icon" src="icons/SD.png"> </button>
+        <button onclick="iconbarButton('Shards')"> <img class="icon" src="icons/SH.png"> </button>
+        <button onclick="iconbarButton('Trap')"> <img class="icon" src="icons/TA.png">
+      </div>
+      <div class="settings"><button commandfor="about" command="toggle-popover" ><h2>About</h2></button>&nbsp&nbsp
+        <button commandfor="settings" command="toggle-popover"><h2>&#9881; Settings</h2></div>
+    </div>
+
+
+
+    <div id="model-container" class="column-container">
+      <!-- Cards added here in main.js --> 
+    </div>
+
+    <div id="settings" class="settings-popover" popover>
+      <div class="allspoilers"> 
+        <input type="checkbox" id="AllSpoilersCheckbox" onchange="toggleAllSpoilers()"> <label for="AllSpoilersCheckbox"> <h2>&nbsp;All&nbsp;Spoilers</h2> </label>
+      </div>
+      <div class="settingslist">
+        <input type="checkbox" id="Coral" onchange="toggleSpoiler('Coral')"> <label for="Coral"> <img class="icon" src="icons/CR.png"></label>
+        <input type="checkbox" id="Kelp" onchange="toggleSpoiler('Kelp')"> <label for="Kelp"> <img class="icon" src="icons/DT.png"></label>
+        <input type="checkbox" id="Fist" onchange="toggleSpoiler('Fist')"> <label for="Fist"> <img class="icon" src="icons/FF.png"></label>
+        <input type="checkbox" id="Prism" onchange="toggleSpoiler('Prism')"> <label for="Prism"> <img class="icon" src="icons/HV.png"></label>
+        <input type="checkbox" id="Astral" onchange="toggleSpoiler('Astral')"> <label for="Astral"> <img class="icon" src="icons/IF.png"></label>
+        <input type="checkbox" id="Drill" onchange="toggleSpoiler('Drill')"> <label for="Drill"> <img class="icon" src="icons/ME.png"></label>
+        <input type="checkbox" id="Shackles" onchange="toggleSpoiler('Shackles')"> <label for="Shackles"> <img class="icon" src="icons/PC.png"></label>
+        <input type="checkbox" id="Meteor" onchange="toggleSpoiler('Meteor')"> <label for="Meteor"> <img class="icon" src="icons/PY.png"></label>
+        <input type="checkbox" id="Snowflake" onchange="toggleSpoiler('Snowflake')"> <label for="Snowflake"> <img class="icon" src="icons/SD.png"></label>
+        <input type="checkbox" id="Shards" onchange="toggleSpoiler('Shards')"> <label for="Shards"> <img class="icon" src="icons/SH.png"></label>
+        <input type="checkbox" id="Trap" onchange="toggleSpoiler('Trap')"> <label for="Trap"> <img class="icon" src="icons/TA.png"></label>
+      </div>
+      <div class= "dropdown">
+        <h2>Backdrop:</h2>
+        <select id="backdropselector">
+          <option value="">None</option>
+          <option value="skybox/snowy_forest_4k.jpg">Summer Road</option>
+          <option value="skybox/snowy_forest_path_01_4k.jpg">Winter Road</option>
+        </select>
+      </div>
+    </div>
+
+    
+    <div id="about" class="about-popover" popover>
+      All painting by <a href="https://jazztap.github.io"> JazzTap</a>. Miniatures from <a href="https://cephalofair.com/">Cephalofair's Frosthaven</a>, by <a href="https://boardgamegeek.com/boardgamedesigner/69802/isaac-childres">Isaac Childres</a>. See <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3691000047"><u>this TableTop Simulator mod</u></a> to replace in-game models.
+      <div class="credits">
+        <u>Additional Credits</u>
+        <br> <a href="https://dicefromhell.de">Dice from Hell</a> guides were invaluable for the photogrammetry process.
+        <br> Site design inspired by <a href="https://www.gloomhavencards.com">Gloomhaven Cards</a>.
+        <br> Paintbrush by <a href="https://thenounproject.com/creator/semangatlunas70/">naomie argi</a> from <a href="https://thenounproject.com/browse/icons/term/paintbrush/" target="_blank" title="paintbrush Icons">Noun Project</a> (CC BY 3.0)
+        <br> Gear by <a href="https://thenounproject.com/creator/wiradesign4/">anggun</a> from <a href="https://thenounproject.com/browse/icons/term/gear/" target="_blank" title="Gear Icons">Noun Project</a> (CC BY 3.0)
+        <br> Snowy Forest Path by <a href = "https://polyhaven.com/all?a=Oliksiy%20Yakovlyev">Oliksiy Yakovlyev</a> via <a href="https://polyhaven.com/a/snowy_forest_path_01">Polyhaven</a>
+        <br> Snowy Forest by <a href = "https://polyhaven.com/all?a=Adrian%20Kubasa">Adrian Kubasa</a> via <a href="https://polyhaven.com/a/snowy_forest">Polyhaven</a>
+        <br> Website by <a href="https://www.barrettrees.com">Barrett Anderson</a>, based on a template by <a href="https://www.melaniedickinson.com/">Melanie Dickinson</a> </p>.</credits>     
+    </div>
+    
+    <div id="model-viewer" class="popover-content" popover>
+     <div class="model-view">
+        <model-viewer id="mv-model" camera-controls  touch-action="pan-y" \
+        camera-orbit="0deg 90deg 25m"\
+         src="models/" \
+         skybox-height="12m" shadow-intensity="2" max-camera-orbit="auto 90deg auto"  > </model-viewer>
+      </div> 
+    </div>
+</body>
+</html>
+

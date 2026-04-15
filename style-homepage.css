@@ -1,0 +1,139 @@
+* {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+    }
+
+body {
+	margin: auto;
+}
+
+@media (max-width: 768px) {
+	.topmatter {
+		width: 60vw;
+		margin: auto;
+		position: fixed;
+		background-color: whitesmoke;
+	}
+}
+@media (min-width: 768px) {
+	.topmatter {
+		width: 100vw;
+		margin: auto;
+		position: fixed;
+		top: 0; 
+		left: 0;
+		right:100px; 
+		margin-bottom: 10px;
+		background-color: whitesmoke;
+	}
+}
+
+.title {
+	text-align: left;
+	margin-left: 10px;
+}
+
+.settings {
+  position: fixed;
+  right: 80px;
+  top: 0px;
+  width: 180px;
+    grid-column-start: 8;
+	text-align: right;
+	align-items: right;
+	justify-content: center;
+	display: inline;
+	margin-left: auto;
+}
+
+
+h1	{ 
+	font-size: 5em; 
+	margin-bottom: 10px;
+}
+h3 {
+  text-decoration: underline;
+}
+.sidenote {
+	font-family: serif;
+	font-style: italic;
+}
+p {
+	margin: 20px 10%;
+}
+.column-container {
+	display:grid;
+	grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+	padding: 3px;
+}
+#model-container {
+	padding-top: 40px;
+}
+#model-container>a {
+	margin: 0px 3px;
+	break-inside: avoid;
+}
+.model-card {
+	break-inside: avoid;
+	border-width: 1px;
+	background-color: whitesmoke;
+	padding: 10px;
+	-webkit-transition-duration: 0.5s; /* Safari */
+	transition-duration: 0.5s;
+}
+
+.model-img {
+	width: 100%;
+	max-height: 300px; 
+	object-fit: contain;
+}
+.model-card:hover {
+	box-shadow: 0px 0px 30px lightgrey;
+	background-color: white;
+}
+.byline>a>img, .byline>img {
+	width: 20px;
+	padding: 0px 4px;
+	/*vertical-align: middle;*/
+}
+h4 { /* Model names */
+	font-size: 200%;
+	margin: 2px;
+	line-height: .9;
+	padding: 5px 0px;
+	-webkit-transition-duration: 0.5s; /* Safari */
+	transition-duration: 0.5s;
+}
+
+/* Mobile Layout */
+@media only screen and (max-width: 768px) { 
+	.topmatter {
+		position: fixed;
+		width: 100vw;
+		
+	}
+	.title {
+		font-size: 14px
+	}
+	.settings {
+		position: relative;
+		right: 0;
+		margin-left: 10px;
+	}
+	h1 {
+		font-size: 4em;
+	}
+	#model-container {
+		padding-top: 100px;
+		grid-template-columns: 1fr 1fr;
+	}
+	.model-card {
+		width: 100%;
+	}
+}
+

@@ -1,0 +1,285 @@
+
+/* Colors */
+* {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+    }
+
+
+body 	{ background-color: white;
+		  color: black;
+		}
+		  
+hr 		{ background-color: white; }
+
+
+/* Font Sizes */
+body 	{ font-size: 20px; }
+p 		{ font-size: 100%; }
+h1		{ font-size: 100%; }
+h3		{ font-size: 200%; }
+#menu	{ font-size: 135%; }
+
+.model-title {
+	padding-top: 1rem;
+	font-size: 110%;
+}
+
+body {
+	font-family: 'News Cycle', sans-serif;
+	font-weight: lighter;
+}
+hr {
+	margin: 50px;
+	border: none;
+	height: .5px;
+}
+h1 {
+	font-family: 'Google Sans', sans-serif;
+	font-weight: normal;
+	letter-spacing: 0em;
+	
+	margin-bottom: 0px;
+}
+
+h2 {
+	font-family: 'Google Sans';
+	/* letter-spacing: 0.2em; */
+	display: inline;
+	text-align: center;
+}
+h4 { /* Model names */
+	font-family: 'Barlow Condensed', sans-serif;
+	font-weight: bold;
+	font-size: 250%;
+	letter-spacing: 0em;
+	font-weight: medium;
+	margin: 2px;
+	line-height: .9;
+	padding: 5px 0px;
+	display: inline;
+}
+
+
+p,li {
+	font-family: Helvetica;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+model-viewer {
+	width: 90vw;
+	height: 70vh;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.icon {
+	height: 1.4em;
+	min-height: 1.4em;
+	flex-shrink: 0;
+	display: flex;
+	vertical-align: bottom;
+}
+
+@media (max-width: 768px) {
+	.iconbar {
+		display: grid;
+		grid-template-columns: repeat(9, 1fr);
+		margin-left: 10px;
+	}
+}
+@media (min-width: 768px) {
+	.iconbar{
+		display: flex;
+		margin-left: auto;
+		margin-right: auto;
+		padding-bottom: 10px;
+		margin-left: 10px;
+	}
+}
+
+.popover-content{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  flex-wrap: wrap;
+  /* display: none; */
+}
+
+.about-popover{
+  position: fixed;
+  top: 50%;
+  left: 20%;
+  transform: translate(-10%, -50%);
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+.settings-popover{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+.settingslist{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.allspoilers{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	align-content: left;
+	text-align: left;
+	padding: 5px;
+}
+
+.credits{
+	font-size: 80%;
+	margin-top: 10px;
+}
+
+/* Cpied in  */
+
+
+
+@media (max-width: 768px) {
+	.topmatter {
+		width: 60vw;
+		margin: auto;
+		position: fixed;
+		background-color: whitesmoke;
+	}
+}
+@media (min-width: 768px) {
+	.topmatter {
+		width: 100vw;
+		margin: auto;
+		position: fixed;
+		top: 0; 
+		left: 0;
+		right:100px; 
+		margin-bottom: 10px;
+		background-color: whitesmoke;
+	}
+}
+
+.title {
+	text-align: left;
+	margin-left: 10px;
+}
+
+.settings {
+  position: fixed;
+  right: 80px;
+  top: 0px;
+  width: 180px;
+    grid-column-start: 8;
+	text-align: right;
+	align-items: right;
+	justify-content: center;
+	display: inline;
+	margin-left: auto;
+}
+
+
+h1	{ 
+	font-size: 5em; 
+	margin-bottom: 10px;
+}
+h3 {
+  text-decoration: underline;
+}
+
+p {
+	margin: 20px 10%;
+}
+.column-container {
+	display:grid;
+	grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+	padding: 3px;
+}
+#model-container {
+	padding-top: 40px;
+}
+#model-container>a {
+	margin: 0px 3px;
+	break-inside: avoid;
+}
+.model-card {
+	break-inside: avoid;
+	border-width: 1px;
+	background-color: whitesmoke;
+	padding: 10px;
+	-webkit-transition-duration: 0.5s; /* Safari */
+	transition-duration: 0.5s;
+}
+
+.model-img {
+	width: 100%;
+	max-height: 300px; 
+	object-fit: contain;
+}
+.model-card:hover {
+	box-shadow: 0px 0px 30px lightgrey;
+	background-color: white;
+}
+
+
+h4 { /* Model names */
+	font-size: 200%;
+	margin: 2px;
+	line-height: .9;
+	padding: 5px 0px;
+	-webkit-transition-duration: 0.5s; /* Safari */
+	transition-duration: 0.5s;
+}
+
+/* Mobile Layout */
+@media only screen and (max-width: 768px) { 
+	.topmatter {
+		position: fixed;
+		width: 100vw;
+		
+	}
+	.title {
+		font-size: 14px
+	}
+	.settings {
+		position: relative;
+		right: 0;
+		margin-left: 10px;
+	}
+	h1 {
+		font-size: 4em;
+	}
+	#model-container {
+		padding-top: 100px;
+		grid-template-columns: 1fr 1fr;
+	}
+	.model-card {
+		width: 100%;
+	}
+}
+
